@@ -1,0 +1,38 @@
+<!-- <div nz-row [nzGutter]="16">
+  <div nz-col [nzSpan]="6">
+    <ng-content select="app-integration-metadata"></ng-content>
+  </div>
+  <div nz-col [nzSpan]="18">
+    <ng-content select=".container-registry__body"></ng-content>
+  </div>
+</div> -->
+<div nz-row [nzGutter]="16">
+  <div nz-col [nzSpan]="6">
+    <ng-content select="app-integration-metadata"></ng-content>
+  </div>
+</div>
+<nz-divider></nz-divider>
+<div nz-row>
+  <div nz-col [nzSpan]="24" class="body">
+    <nz-table #basicTable [nzData]="data" [nzLoading]="loading">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Runtime</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.name }}</td>
+          <td>{{ data.runtime }}</td>
+          <td>{{ data.status }}</td>
+          <td>
+            <a (click)="delete.emit(data)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<nz-card class="integration-item">
+  <nz-avatar class="avatar" [nzSize]="64" [nzIcon]="integration?.icon"></nz-avatar>
+
+  <p>{{ integration?.name }}</p>
+  <p>{{ integration?.description }}</p>
+  <button (click)="integration?.action()" nz-button nzType="primary">
+    {{ integration?.buttonText }}
+  </button>
+</nz-card>
