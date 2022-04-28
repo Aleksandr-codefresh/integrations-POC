@@ -4,7 +4,6 @@ import {
   ContainerRegistryService,
   IRegistryIntegration,
 } from '../services/container-registry.service';
-import { IIssueTrackingIntegration } from '../services/issue-tracking.service';
 
 export class BaseRegistryIntegrations {
   integration: IntegrationConfig;
@@ -18,7 +17,7 @@ export class BaseRegistryIntegrations {
     this.integration = containerRegistryService.getConfig(provider);
   }
 
-  deleteData(integration: IIssueTrackingIntegration) {
+  deleteData(integration: IRegistryIntegration) {
     this.listOfData = this.listOfData.filter(
       (data) => data.name !== integration.name
     );

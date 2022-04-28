@@ -1,3 +1,8 @@
 <app-issue-tracking [loading]="isLoading" [data]="listOfData" (delete)="deleteData($event)">
   <app-integration-metadata [integration]="integration"></app-integration-metadata>
+  <div class="integration-details">
+    <h2>Connect Jira to Codefresh</h2>
+    <p>Add Jira to your CI</p>
+    <button nz-button nzType="primary">Go to Action</button>
+  </div>
 </app-issue-tracking>

@@ -2,6 +2,9 @@
   <div nz-col [nzSpan]="6">
     <ng-content select="app-integration-metadata"></ng-content>
   </div>
+  <div nz-col [nzSpan]="18">
+    <ng-content select=".integration-details"></ng-content>
+  </div>
 </div>
 <nz-divider></nz-divider>
 <div nz-row>
@@ -11,6 +14,7 @@
         <tr>
           <th>Name</th>
           <th>Runtime</th>
+          <th>Value</th>
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -19,6 +23,7 @@
         <tr *ngFor="let data of basicTable.data">
           <td>{{ data.name }}</td>
           <td>{{ data.runtime }}</td>
+          <td>{{ data.value }}</td>
           <td>{{ data.status }}</td>
           <td>
             <a (click)="delete.emit(data)">Delete</a>
